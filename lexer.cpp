@@ -1,6 +1,6 @@
 #include <string>
 
-enum Token
+enum Token // enum to represent the different possible values
 {
     tok_eof = -1,
     tok_def = -2,
@@ -9,13 +9,13 @@ enum Token
     tok_number = -5
 };
 
-static std::string IdentifierStr;
-static double numVal;
+static std::string IdentifierStr; // to store identifier name if tok_identifier
+static double numVal;             // to store value of number of tok_number
 
-static int gettok()
+static int gettok() // main function that implements the lexer
 {
     static int LastChar = ' ';
 
     while (isspace(LastChar))
-        LastChar = getchar();
+        LastChar = getchar(); // to ignore whitespaces between tokens
 }

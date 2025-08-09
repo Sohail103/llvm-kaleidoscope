@@ -1,3 +1,5 @@
+#include <string>
+
 enum Token
 {
     tok_eof = -1,
@@ -6,3 +8,14 @@ enum Token
     tok_identifier = -4,
     tok_number = -5
 };
+
+static std::string IdentifierStr;
+static double numVal;
+
+static int gettok()
+{
+    static int LastChar = ' ';
+
+    while (isspace(LastChar))
+        LastChar = getchar();
+}

@@ -18,4 +18,13 @@ static int gettok() // main function that implements the lexer
 
     while (isspace(LastChar))
         LastChar = getchar(); // to ignore whitespaces between tokens
+
+    if (isalpha(LastChar))
+    {
+        IdentifierStr = LastChar;
+        while (isalnum(LastChar = getchar()))
+        {
+            IdentifierStr += LastChar;
+        }
+    }
 }
